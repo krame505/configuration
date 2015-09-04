@@ -1,0 +1,2 @@
+# configuration
+Simple configuration library
