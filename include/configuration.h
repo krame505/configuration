@@ -112,7 +112,6 @@ class Configuration {
   // Functions to get config values
   /**
    * \brief Looks up an int
-   * \param table The table from which to look up the value
    * \param name The name of the value
    * \return The value
    */
@@ -120,7 +119,6 @@ class Configuration {
 
   /**
    * \brief Looks up a float
-   * \param table The table from which to look up the value
    * \param name The name of the value
    * \return The value
    */
@@ -128,7 +126,6 @@ class Configuration {
 
   /**
    * \brief Looks up a boolean
-   * \param table The table from which to look up the value
    * \param name The name of the value
    * \return The value
    */
@@ -144,11 +141,17 @@ class Configuration {
 
   /**
    * \brief Looks up a string
-   * \param table The table from which to look up the value
    * \param name The name of the value
    * \return The value
    */
   std::string getStringConfig(const std::string &name);
+
+  /**
+   * \brief Checks if a config value exists
+   * \param name The name of the value
+   * \return The value
+   */
+  bool hasConfig(const std::string &name);
 
  private:
   /**
@@ -169,3 +172,4 @@ class Configuration {
 #define GET_BOOL(NAME) Configuration::get()->getBoolConfig(NAME)
 #define GET_CHAR(NAME) Configuration::get()->getCharConfig(NAME)
 #define GET_STRING(NAME) Configuration::get()->getStringConfig(NAME)
+#define DEFINED(NAME) Configuration::get()->hasConfig(NAME)

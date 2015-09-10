@@ -327,3 +327,7 @@ string Configuration::getStringConfig(const string &name) {
     return regex_replace(str, varSearch, expandVar);
   }
 }
+
+bool Configuration::hasConfig(const string &name) {
+  return config.find(name) != config.end();
+}
